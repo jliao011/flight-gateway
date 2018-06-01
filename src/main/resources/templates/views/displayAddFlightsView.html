@@ -30,7 +30,7 @@
 					<td th:text="${flight.arrivalCity}">Arrival</td>
 					<!-- <td th:text="${#calendars.format(flight.dateOfDeparture,'MM/dd/yyyy HH:mm')}">Departure Date</td> -->
 					<!-- <td th:text="${flight.estimatedDepartureTime}">Departure Date</td> -->
-					<td th:text="${#calendars.format(flight.estimatedDepartureTime,'MM/dd/yyyy HH:mm')}">Departure Date</td>
+					<td th:text="${#calendars.format(flight.dateOfDeparture,'MM/dd/yyyy')}">Departure Date</td>
 				</tr>
 			</tbody>
 		</table>

@@ -17,7 +17,7 @@
 						<th scope="col" class="col-sm-2">Airlines</th>
 						<th scope="col" class="col-sm-2">Departure City</th>
 						<th scope="col" class="col-sm-2">Arrival City</th>
-						<th scope="col" class="col-sm-2">Departure Date</th>
+						<th scope="col" class="col-sm-2">Estimated Departure Time</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -26,7 +26,7 @@
 						<td th:text="${flight.operatingAirlines}">Airlines</td>
 						<td th:text="${flight.departureCity}">Departure</td>
 						<td th:text="${flight.arrivalCity}">Arrival</td>
-						<td th:text="${#calendars.format(flight.estimatedDepartureTime,'MM/dd/yyyy HH:mm')}">Departure Date</td>
+						<td th:text="${#calendars.format(flight.estimatedDepartureTime,'MM/dd/yyyy HH:mm')}">Estimated Departure Time</td>
 					</tr>
 				</tbody>
 			</table>
