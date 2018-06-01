@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/main}"
+>
+<head>
+<title>Passenger Check In</title>
+</head>
+<body>
+
+	<div layout:fragment="content">
+		<form class="form form-horizontal " action="/startCheckIn" method="post">
+			<!-- <input type="hidden" name="flightId" th:value="${flight.id}" /> -->
+			<h2>Input Your Reservation ID:</h2>
+			<div class="form-group row">
+				<label class="col-sm-3 col-form-label">Reservation ID:</label>
+				<div class="col-sm-6">
+					<input type="text" name="reservationId" class="form-control" placeholder="Reservation ID" required pattern="[0-9]+" title="Input a number."/>
+				</div>
+				<button type="submit" class="btn btn-primary mb-2">Start Check In</button>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

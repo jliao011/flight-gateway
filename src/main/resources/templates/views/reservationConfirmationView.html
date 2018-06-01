@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/main}"
+>
+<head>
+<title>Reservation Confirmation</title>
+</head>
+<body>
+
+	<div layout:fragment="content">
+		<h1>Flight Details:</h1>
+		<div class="list">
+			<table class="list table table-hover">
+				<thead>
+					<tr>
+						<th scope="col" class="col-sm-1">Flight #</th>
+						<th scope="col" class="col-sm-2">Airlines</th>
+						<th scope="col" class="col-sm-2">Departure City</th>
+						<th scope="col" class="col-sm-2">Arrival City</th>
+						<th scope="col" class="col-sm-2">Departure Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th th:text="${reservation.flight.flightNumber}">1</th>
+						<td th:text="${reservation.flight.operatingAirlines}">Airlines</td>
+						<td th:text="${reservation.flight.departureCity}">Departure</td>
+						<td th:text="${reservation.flight.arrivalCity}">Arrival</td>
+						<td th:text="${#calendars.format(reservation.flight.estimatedDepartureTime,'MM/dd/yyyy HH:mm')}">Departure Date</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<h1>Passenger Details:</h1>
+		<div class="list">
+			<table class="list table table-hover">
+				<thead>
+					<tr>
+						<th scope="col" class="col-sm-2">First Name</th>
+						<th scope="col" class="col-sm-2">Middle Name</th>
+						<th scope="col" class="col-sm-2">Last Name</th>
+						<th scope="col" class="col-sm-2">Email</th>
+						<th scope="col" class="col-sm-2">Phone</th>
+						<th scope="col" class="col-sm-3">Reservation Time</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th th:text="${reservation.passenger.firstName}">First Name</th>
+						<td th:text="${reservation.passenger.middleName}">Middle Name</td>
+						<td th:text="${reservation.passenger.firstName}">Last Name</td>
+						<td th:text="${reservation.passenger.email}">Email</td>
+						<td th:text="${reservation.passenger.phone}">Phone</td>
+						<td th:text="${#calendars.format(reservation.created,'MM/dd/yyyy HH:mm')}">Created Date</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div layout:fragment="checkin">
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" href="../static/stylesheets/main.css" th:href="@{/stylesheets/main.css}" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css' />
+<link href='https://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css' />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<title></title>
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-default container">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/">Welcome to GateWay</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class=""><a href="/">Home</a></li>
+						<li class=""><a href="/flightReservation">Flight Search</a></li>
+						<li class=""><a href="/checkin">Flight Check In</a></li>
+						<li class=""><a sec:authorize="hasAuthority('ADMIN')" href="/addFlights">Add Flights</a></li>
+
+					</ul>
+					<div class="navbar-text navbar-right">
+						Welcome <span sec:authorize="!isAuthenticated()">Guest</span><span sec:authorize="isAuthenticated()"
+							sec:authentication="name"
+						>User Name</span> |
+						<form sec:authorize="isAuthenticated()" id="frmlogout" th:action="@{/logout}" method="post" class="form-inline">
+							<a href="javascript:{}" onclick="document.getElementById('frmlogout').submit(); return false;">Logout</a>
+						</form>
+						<a sec:authorize="!isAuthenticated()" th:href="@{/login}"> Login</a> <a sec:authorize="!isAuthenticated()"
+							th:href="@{/register}"
+						> Register</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<div class="content-layout">
+			
+			<div th:if="${msg}">
+				<p class="alert alert-success" th:text="${msg}"></p>
+			</div>
+
+			<div th:if="${error}">
+				<p class="alert alert-danger" th:text="${error}"></p>
+			</div>
+			<div th:if="${message}">
+				<p class="alert alert-danger" th:text="${message}"></p>
+			</div>
+			<div layout:fragment="content">content here</div>
+		</div>
+		<footer class="navbar navbar-default container" layout:fragment="footer">
+			<span>2018 Jiafeng Liao</span>
+		</footer>
+	</div>
+
+</body>
+</html>
