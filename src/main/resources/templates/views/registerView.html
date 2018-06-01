@@ -9,7 +9,8 @@
 
 	<div layout:fragment="content">
 		<h1>User Registration</h1>
-		<form class="form form-horizontal" action="registerAction" method="post">
+		<form id="registerform" class="form form-horizontal" action="registerAction" method="post">
+			<fieldset>
 			<div class="form-group row">
 				<label class="col-sm-3 col-form-label">First Name:</label>
 				<div class="col-sm-7">
@@ -25,25 +26,47 @@
 			<div class="form-group row">
 				<label class="col-sm-3 col-form-label">Email:</label>
 				<div class="col-sm-7">
-					<input type="email" name="email" class="form-control" placeholder="Email" />
+					<input type="email" name="email" class="form-control" placeholder="Email" required />
 				</div>
 			</div>
 			<div class="form-group row">
 				<label class="col-sm-3 col-form-label">Password:</label>
 				<div class="col-sm-7">
-					<input type="password" name="password" class="form-control" placeholder="Password" />
+					<input id="password" type="password" name="password" class="form-control" placeholder="Password" required />
 				</div>
 			</div>
 			<div class="form-group row">
 				<label class="col-sm-3 col-form-label">Confirm:</label>
 				<div class="col-sm-7">
-					<input type="password" name="confirmPassword" class="form-control" placeholder="Confirm Password" />
+					<input id="confirm" type="password" name="confirmPassword" class="form-control" placeholder="Confirm Password"
+						required
+					/>
 				</div>
 			</div>
 			<button type="submit" class="btn btn-primary mb-2">Submit</button>
-
-		</form>
-
+		</fieldset>
+		</form>  
+		<!-- Include jQuery -->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				var password = $("#password")
+				  , confirm = $("#confirm");
+				function validatePassword(){
+				  if(password.val() != confirm.val()) {
+				    confirm.get(0).setCustomValidity("Passwords Don't Match");
+				  } else {
+				    confirm.get(0).setCustomValidity('');
+				  }
+				}
+				password.change(function(){
+					validatePassword();
+				}); 
+				confirm.keyup(function(){
+					validatePassword();
+				}); 
+			});
+		</script>
 	</div>
 
 </body>

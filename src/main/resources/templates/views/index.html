@@ -8,10 +8,47 @@
 <body>
 
 	<div layout:fragment="content">
-		<h1>Welcome to GateWay</h1>
-		<h3>
-			GateWay provides flight reservation and checkin services.
-			</h2>
+		<div class="index">
+			<h2>Welcome to GateWay</h2>
+			<h3>GateWay provides flight reservation and checkin services.</h3>
+			<hr style="border-width: 1px; border-color: #BBBBBB" />
+			<h3>Pre-loaded Users for Login:</h3>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th scope="col" class="col-sm-2">Email</th>
+						<th scope="col" class="col-sm-2">Password</th>
+						<th scope="col" class="col-sm-2">Authentication</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>admin@admin.com</td>
+						<td>admin</td>
+						<td>ADMIN, USER</td>
+					</tr>
+					<tr>
+						<td>user@user.com</td>
+						<td>user</td>
+						<td>USER</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr style="border-width: 1px; border-color: #BBBBBB" />
+			<h3>Functionalities:</h3>
+			<ul>
+				<li>Support user registration</li>
+				<li>Support guest search (or condition) and check all flights (blank condition)</li>
+				<li>After registered user submit the flight reservation, a digital itinerary will be sent to Passenger's email address</li>
+				<li>Registered users should use flight reservation ID to check in and update number of bags</li>
+				<li>Login as admin to access flight create function in "Add Flights" tag, flight edit and delete function in "Flight Search" tag</li>
+			</ul>
+			<hr style="border-width: 1px; border-color: #BBBBBB" />
+			<h3>Tech Stack:</h3>
+			
+			<p>Spring Boot App, Spring Data (JPA, Hibernate, ORM), Spring MVC, Spring Security, Thymeleaf template engine dialects, RESTful web service, SLF4j/Log4j logging, 
+			Exception handling, Maven builder, Git, Heroku deployment, JawsDB MySQL on Heroku, HTML/CSS/JavaScript/BootStrap</p>
+		</div>
 	</div>
 
 </body>
