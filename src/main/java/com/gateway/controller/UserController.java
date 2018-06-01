@@ -72,7 +72,7 @@ public class UserController {
 		try {
 			this.securityService.login(user.getEmail(), inputPassword);
 			logger.info("Login successfull");
-			return "/index";
+			return "views/index";
 		} catch (DisabledException | LockedException | AuthenticationException | UsernameNotFoundException
 				| BadCredentialsException e) {
 			modelMap.addAttribute("error", e.getMessage());
@@ -95,7 +95,7 @@ public class UserController {
 		try {
 			this.securityService.login(email, password);
 			logger.info("Login successfull");
-			return "/index";
+			return "views/index";
 		} catch (DisabledException | LockedException | AuthenticationException | UsernameNotFoundException
 				| BadCredentialsException e) {
 			modelMap.addAttribute("error", e.getMessage());
