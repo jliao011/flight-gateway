@@ -161,6 +161,8 @@ public class DataLoader {
 		passenger.setEmail("flightgateway@gmail.com");
 		passenger.setFirstName("First Name");
 		passenger.setLastName("Last Name");
+		passenger.setMiddleName("Middle Name");
+		passenger.setPhone("1234567");
 		passenger = this.passengerRepository.save(passenger);
 		logger.info("Passenger created: {}", passenger.toString());
 		Reservation reservation = new Reservation();
@@ -179,39 +181,12 @@ public class DataLoader {
 		passenger.setEmail("aa");
 		passenger.setFirstName("aaa");
 		passenger.setLastName("asdf");
-		passengerRepository.save(passenger);
+		passenger = passengerRepository.save(passenger);
 		Reservation reservation = new Reservation();
 		reservation.setCheckedIn(false);
 		reservation.setNumberOfBags(2);
 		reservation.setFlight(this.flightRepository.findById(1L).get());
 		reservation.setPassenger(passenger);
 		reservationRepository.save(reservation);
-
-		System.out.println(flightRepository.findById(1L).toString());
-//		System.out.println(reservationRepository.findById(1L).toString());
-//		System.out.println(passengerRepository.findById(1L).toString());
-//		reservationRepository.deleteById(1L);
-//		passengerRepository.deleteById(1L);
-//
-//		System.out.println(reservationRepository.findById(1L).toString());
-//		System.out.println(passengerRepository.findById(1L).toString());
-
-//		User admin = new User();
-//		admin.setFirstName("admin");
-//		admin.setLastName("admin");
-//		admin.setEmail("admin@admin.com");
-//		admin.setPassword("admin");
-//		admin = userRepository.save(admin);
-//		logger.info("admin created {}", admin);
-//
-//		Role adminRole = new Role();
-//		adminRole.setName("admin");
-//		adminRole = roleRepository.save(adminRole);
-//		logger.info("admin role created {}", adminRole);
-//
-//		adminRole.getUsers().add(admin);
-//		admin.getRoles().add(adminRole);
-//		logger.info("admin relation mapped");
-
 	}
 }

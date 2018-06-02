@@ -11,12 +11,12 @@
 		<form class="form form-horizontal " action="confirmCheckIn" method="post">
 			<input type="hidden" name="reservationId" th:value="${reservation.id}" />
 			<div class="form-group row">
-				<label class="col-sm-7 col-form-label">Enter the number of bags you want to check in:</label>
+				<label class="col-sm-7 col-form-label">Enter the number of bags for check in:</label>
 				<div class="col-sm-5">
 					<input type="text" name="numberOfBags" class="form-control" placeholder="Number of Bags" required pattern="[0-9]+" title="Input a number."/>
 				</div>
 			</div>
-			<button type="submit" class="btn btn-primary mb-2">Check In</button>
+			<button type="submit" class="btn btn-primary sm-3">Check In</button>
 
 		</form>
 	</div>

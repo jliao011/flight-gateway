@@ -21,35 +21,35 @@
 					<input type="hidden" name="flightId" th:value="${flight.id}"/>
 					<div class="form-group row">
 						<div class="col-sm-3">
-							<label>Flight Number</label> <input type="text" class="form-control" name="flightNumber"
-								th:value="${flight.flightNumber}"
+							<label>Number</label> <input type="text" class="form-control" name="flightNumber"
+								th:value="${flight.flightNumber}" required
 							/>
 						</div>
-						<div class=" col-sm-3">
-							<label>Flight Airlines</label> <input type=text class="form-control" name="flightAirlines"
-								th:value="${flight.operatingAirlines}"
+						<div class=" col-sm-4">
+							<label>Airlines</label> <input type=text class="form-control" name="flightAirlines"
+								th:value="${flight.operatingAirlines}" required
 							/>
 						</div>
 						<div>
-							<label class="col-sm-4 "> Departure Date: </label>
-							<div class="col-sm-4">
+							<label class="col-sm-5 "> Departure Date: </label>
+							<div class="col-sm-5">
 								<div class="input-group">
 									<div class="input-group-addon">
 										<i class="fa fa-calendar"> </i>
 									</div>
 									<input class="form-control" id="date" name="departureDate" type="text"
-										th:value="${#calendars.format(flight.dateOfDeparture,'MM/dd/yyyy')}"
+										th:value="${#calendars.format(flight.dateOfDeparture,'MM/dd/yyyy')}" required
 									/>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="form-group row">
-						<div class="col-sm-4">
-							<label>Departure City</label> <input type="text" class="form-control" name="from" th:value="${flight.departureCity}" />
+						<div class="col-sm-6">
+							<label>Departure City</label> <input type="text" class="form-control" name="from" th:value="${flight.departureCity}" required/>
 						</div>
-						<div class=" col-sm-4">
-							<label>Arrival City</label> <input type=text class="form-control" name="to" th:value="${flight.arrivalCity}" />
+						<div class=" col-sm-6">
+							<label>Arrival City</label> <input type=text class="form-control" name="to" th:value="${flight.arrivalCity}" required/>
 						</div>
 					</div>
 					<button type="submit" class="btn btn-primary">Update</button>

@@ -13,11 +13,11 @@
 			<table class="list table table-hover">
 				<thead>
 					<tr>
-						<th scope="col" class="col-sm-1">Flight #</th>
-						<th scope="col" class="col-sm-2">Airlines</th>
-						<th scope="col" class="col-sm-2">Departure City</th>
-						<th scope="col" class="col-sm-2">Arrival City</th>
-						<th scope="col" class="col-sm-2">Departure Date</th>
+						<th scope="col" class="col-sm-1">Number</th>
+						<th scope="col" class="col-sm-3">Airlines</th>
+						<th scope="col" class="col-sm-2">Departure</th>
+						<th scope="col" class="col-sm-2">Arrival</th>
+						<th scope="col" class="col-sm-4">Departure Time</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -37,17 +37,15 @@
 				<thead>
 					<tr>
 						<th scope="col" class="col-sm-2">First Name</th>
-						<th scope="col" class="col-sm-2">Middle Name</th>
 						<th scope="col" class="col-sm-2">Last Name</th>
 						<th scope="col" class="col-sm-2">Email</th>
 						<th scope="col" class="col-sm-2">Phone</th>
-						<th scope="col" class="col-sm-3">Reservation Time</th>
+						<th scope="col" class="col-sm-2">Reservation Time</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<th th:text="${reservation.passenger.firstName}">First Name</th>
-						<td th:text="${reservation.passenger.middleName}">Middle Name</td>
 						<td th:text="${reservation.passenger.firstName}">Last Name</td>
 						<td th:text="${reservation.passenger.email}">Email</td>
 						<td th:text="${reservation.passenger.phone}">Phone</td>
