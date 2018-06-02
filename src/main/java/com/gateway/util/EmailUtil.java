@@ -41,7 +41,7 @@ public class EmailUtil {
 			messageHelper.addAttachment("Itinerary", new File(filePath));
 			sender.send(message);
 		} catch (MessagingException e) {
-			logger.error("Exception in send itinerary.");
+			logger.warn("Exception in send itinerary.");
 		}
 	}
 }
