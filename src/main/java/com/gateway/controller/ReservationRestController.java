@@ -14,6 +14,7 @@ import com.gateway.domain.Reservation;
 import com.gateway.dto.ReservationUpdateRequest;
 import com.gateway.repository.ReservationRepository;
 
+// handle rest http request from checkin client, 
 @RestController
 public class ReservationRestController {
 	private static final Logger logger = LoggerFactory.getLogger(ReservationRestController.class);

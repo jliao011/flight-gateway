@@ -13,6 +13,7 @@ import com.gateway.domain.Reservation;
 import com.gateway.dto.ReservationUpdateRequest;
 import com.gateway.integration.ReservationRestClient;
 
+// use ReservationRestClient to sent HTTP request
 @Controller
 public class CheckInController {
 

@@ -9,6 +9,7 @@ import org.springframework.web.client.RestTemplate;
 import com.gateway.domain.Reservation;
 import com.gateway.dto.ReservationUpdateRequest;
 
+// sent http request from check in client, return reservation service response 
 @Component
 public class ReservationRestClientImpl implements ReservationRestClient {
 
